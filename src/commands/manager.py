@@ -1,3 +1,5 @@
+from src.commands.concrete_commands.load_csv import LoadCSV
+from src.commands.concrete_commands.save_csv import SaveCSV
 from src.bank_account import BankAccount, Currency
 from src.commands.concrete_commands.exit_command import ExitCommand
 from src.commands.concrete_commands.help_command import HelpCommand
@@ -38,28 +40,17 @@ class Manager:
         self.invoker.register("balance", ShowBalanceCommand(receiver=self.receiver,
                                                             name="balance",
                                                             description="Show your balance"))
-        pass
+        
+        self.invoker.register("save-csv", SaveCSV(receiver=self.receiver,
+                                                            name="save-csv",
+                                                            description="Save your account account-data to .csv file \n\tEXAMPLE: save-csv PATH \n\tSEMANTIC: PATH[OPTIONAL] (path to your file)"))
+        
     
+        self.invoker.register("load-csv", LoadCSV(receiver=self.receiver,
+                                                            name="load-csv",
+                                                            description="Load from account-data .csv to account and change it instantly \n\tEXAMPLE: load-csv PATH \n\tSEMANTIC: PATH[OPTIONAL] (path to your file)"))
+        pass
+
     def execute_command(self, command_line: str):
         self.invoker.execute(command_line)
-
-    def display_welcome_message(self):
-        print(f"Hello {self.receiver.get_owner()} here is the cli for managing your Bank account!")
-        print("You might use command 'show' to get more information")
-        print("Enjoyable use!")
-        pass
-
-    def interactive_step(self):
-        try:
-            line_args = input("\n>> ").strip()
-        except KeyboardInterrupt:
-            self.execute_command("exit")
-        else:
-            self.execute_command(line_args)
-        pass
-
-    def start(self):
-        self.display_welcome_message()
-        while True:
-            self.interactive_step()
         pass
