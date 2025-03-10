@@ -17,4 +17,8 @@ class HelpCommand(Command):
                 print("Incorrect command name")
         else:
             print("Incorrect argument count")
+
+    def show_description(self):
+        print(f"Describe information about concrete command\n\tEXAMPLE: help COMMAND \n\tSEMANTIC: COMMAND ('show'/'exit'/'deposit')")
+        pass
             

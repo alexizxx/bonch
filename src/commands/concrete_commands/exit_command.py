@@ -18,3 +18,7 @@ class ExitCommand(Command):
             exit(0)
         else:
             print("Incorrect argument count")
+
+    def show_description(self):
+        print(f"Exit the session")
+        pass

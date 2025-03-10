@@ -30,3 +30,7 @@ class SaveCSV(Command):
         else:
             print("Incorrect argument count")
         pass
+
+    def show_description(self):
+        print(f"Save your account account-data to .csv file \n\tEXAMPLE: save-csv PATH \n\tSEMANTIC: PATH[OPTIONAL] (path to your file)")
+        pass

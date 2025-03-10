@@ -13,6 +13,11 @@ class ShowCommand(Command):
         if len(args) == 1:
             print('Description of all commands:')
             for a, b in self.receiver.command_map.items():
-                print(f'{a}  -  {b.description}')
+                print(f'{a} - ', end="")
+                b.show_description()
         else:
             print("Incorrect argument count")
+
+    def show_description(self):
+        print(f"Describe short information about all commands")
+        pass

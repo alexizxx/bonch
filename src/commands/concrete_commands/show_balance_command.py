@@ -16,3 +16,7 @@ class ShowBalanceCommand(Command):
                 print(f'\t{a.value.upper()} : {b}')
         else:
             print("Incorrect argument count")
+    
+    def show_description(self):
+        print(f"Show your balance")
+        pass

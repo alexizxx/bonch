@@ -31,3 +31,7 @@ class DepositCommand(Command):
                 self.receiver.deposit(amount, currency)
         else:
             print("Incorrect argument count")
+
+    def show_description(self):
+        print(f"Deposit money to your account \n\tEXAMPLE: deposit AMOUNT CURRENCY \n\tSEMANTIC: AMOUNT (int > 0), CURRENCY: {[e.value for e in Currency]}")
+        pass

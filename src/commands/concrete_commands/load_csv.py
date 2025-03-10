@@ -76,3 +76,7 @@ class LoadCSV(Command):
         else:
             print("Incorrect argument count")
             pass
+
+    def show_description(self):
+        print(f"Load from account-data .csv to account and change it instantly \n\tEXAMPLE: load-csv PATH \n\tSEMANTIC: PATH[OPTIONAL] (path to your file)")
+        pass

@@ -34,3 +34,8 @@ class WithdrawCommand(Command):
                     print("You have not money for withdraw, try deposit something before")
         else:
             print("Incorrect argument count")
+
+
+    def show_description(self):
+        print(f"Withdraw money from your account \n\tEXAMPLE: withdraw AMOUNT CURRENCY \n\tSEMANTIC: AMOUNT (int > 0), CURRENCY: {[e.value for e in Currency]}")
+        pass
